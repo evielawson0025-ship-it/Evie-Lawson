@@ -443,6 +443,38 @@
 
     .about-images { position: relative; max-width: 420px; }
 
+    /* simple, easy headshot treatment — one img, fixed proportions, no fuss */
+    .profile-tag {
+      margin-top: 1.1rem;
+      display: flex; align-items: center; justify-content: center; gap: 0.55rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--seal);
+    }
+    .profile-tag i { color: var(--foil); }
+
+    /* step list — used in the "what happens next" contact aside */
+    .step-list { list-style: none; margin-top: 1.2rem; }
+    .step-list li {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 0.9rem 0;
+      border-top: 1px solid rgba(246,240,223,0.12);
+      color: rgba(246,240,223,0.75);
+      font-size: 0.92rem;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      border: 1px solid var(--foil);
+      color: var(--foil-bright);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+
     .about h2 { font-size: 2.6rem; margin-bottom: 1.4rem; }
     .about p { color: var(--ink-soft); margin-bottom: 1.4rem; font-size: 1.03rem; }
 
@@ -796,11 +828,12 @@
         <div class="about-images reveal">
           <!-- ============================================
                src: same headshot as hero, e.g. images/evie.jpg
+               Just one straightforward photo — any decent
+               well-lit headshot works, cropped roughly 4:5.
           ============================================ -->
-          <img src="images/evie.jpg" class="portrait-frame" alt="Evie Lawson"
-               style="width:100%;height:100%;object-fit:cover;">
-          <div class="about-secondary"><i class="fas fa-book-open"></i></div>
-          <div class="about-badge"><div class="years">6+</div><span>Years</span></div>
+          <img src="images/evie.jpg" alt="Evie Lawson"
+               style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-soft);border:1px solid var(--line);">
+          <div class="profile-tag"><i class="fas fa-feather"></i> Book Marketing Specialist · 6+ Years</div>
         </div>
         <div class="about-content reveal">
           <span class="kicker">Ch. 01 — About the Author</span>
@@ -1087,11 +1120,18 @@
           <div class="contact-item"><i class="fas fa-envelope"></i><span>evielawson0025@gmail.com</span></div>
           <div class="contact-item"><i class="fas fa-phone"></i><span>+1 (555) 123-4567 <!-- replace with your real number --></span></div>
           <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Austin, Texas • Serving Authors Worldwide</span></div>
+
+          <ul class="step-list">
+            <li><span class="step-num">1</span>Your message arrives directly in my inbox — no assistant, no filter.</li>
+            <li><span class="step-num">2</span>I take a look at your book, genre, and current position.</li>
+            <li><span class="step-num">3</span>I reply personally within one business day.</li>
+            <li><span class="step-num">4</span>If it's a fit, we book a call. If not, I'll tell you honestly.</li>
+          </ul>
         </div>
 
         <div class="contact-form-wrapper reveal">
           <h3>Send Me a Message</h3>
-          <p>I read every submission personally and typically reply within one business day.</p>
+          <p>I read every submission personally and typically reply within one business day. The more specific you are, the more useful my reply will be — book title, genre, and where things currently stand all help.</p>
           <form action="https://formspree.io/f/mbdqoqra" method="POST">
             <div class="form-row">
               <div class="form-group">
